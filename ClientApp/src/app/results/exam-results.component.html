@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header">
+    <h4>{{ componentTitle }}</h4>
+    <div class="row">
+      <p *ngIf="!results"><em>Loading...</em></p>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row" *ngFor="let group of groupResults$">
+      <div class="col-md-6">
+        <h5>
+          {{ group | json }}
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
