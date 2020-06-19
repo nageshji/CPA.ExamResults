@@ -10,6 +10,7 @@ import * as groupBy from "lodash/groupBy";
 })
 export class ExamResultsComponent implements OnInit {
   groupResults$: any[] = [];
+  results: IExamResults[];
   componentTitle = "Exam Results";
   errorMessage = "";
 
@@ -17,8 +18,9 @@ export class ExamResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this.examResultsService.getResults().subscribe(
-      (response: IExamResults[]) => {
-        this.groupResults$ = groupBy(response, "year");
+      (response) => {
+        //this.groupResults$ = groupBy(response, "year");
+        this.results = response;
       },
       (error) => {
         console.error(error);

@@ -7,11 +7,12 @@
   </div>
 
   <div class="card-body">
-    <div class="row" *ngFor="let group of groupResults$">
+    <div class="row" *ngFor="let result of results">
       <div class="col-md-6">
         <h5>
-          {{ group | json }}
+          {{ result.year }}
         </h5>
+        <p>{{ result.subject }}</p>
       </div>
     </div>
   </div>
